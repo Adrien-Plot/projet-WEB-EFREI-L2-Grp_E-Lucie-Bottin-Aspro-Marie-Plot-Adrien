@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>J.ALM</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="assets/java/myscript.js" async></script>
+	</head>
+	<body class="single">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<h1><a href="main.html">ALM's Journal</a></h1>
+					<nav class="links">
+						<ul>
+							<li><a href="politique.html">Politique</a></li>
+							<li><a href="economie.html">Economie</a></li>
+							<li><a href="sport.html">Sport</a></li>
+							<li><a href="sante.html">Santé</a></li>
+							<li><a href="faits-divers.html">Faits divers</a></li>
+							<li><a href="play.html">A vous de jouer !</a></li>
+						</ul>
+					</nav>
+				</header>
+
+
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post" id="1" style="display : block">
+                <div class="flex-container">
+                  <label for="Titre">Titre :</label>
+                  <input type="text" id="Titre" placeholder="Titre de l'article" required>
+
+                  <label for="Auteur" id="auteur">Auteur/trice :</label>
+                  <input type="text" id="Auteur" placeholder="nom de l'auteur ?" pattern="[A-Za-z]+" required>
+
+                  <label for="Date" id="date">Date :</label>
+                  <input type="text" id="Date" placeholder="Date de publication ?" required>
+
+                  <br />
+                  <br />
+
+                  <label for="article">Article :</label>
+									<textarea id="txt" name="article" rows="25" cols="110"></textarea>
+
+
+                </div>
+
+                <br />
+                <br />
+                <br />
+
+                <div class="button">
+                  <button id="button" type="button" onclick="ajouter(); showArticle(); initial(); return false;">Ajouter</button>
+                </div>
+							</article>
+
+              <article id="2" class="post" style="display : block">
+                <header>
+									<div class="title">
+										<h2 id="titre2"></h2>
+									</div>
+									<div class="meta">
+										<time id="date2" class="published" datetime="2015-11-01"></time>
+										<a href="#" class="author"><span id="auteur2"class="name"></span></a>
+									</div>
+								</header>
+								<p id="article">
+
+                </p>
+
+                <div class="button">
+                  <button id="button2" type="button" onclick="showForm(); return false;">Remplacer par un autre article</button>
+                </div>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<ul class="icons">
+								<li>
+										<a href="https://twitter.com/passionlapins?lang=en" target="_blank"><img src="./images/icons-twitter.png" height="50" width="50" alt="logo twitter" /></a>
+								</li>
+								<li>
+										<a href="https://www.facebook.com/luciebottin2" target="_blank"><img src="./images/icons-facebook.png" height="50" width="50" alt="logo facebook" /></a>
+								</li>
+								<li>
+										<a href="https://www.instagram.com/adrienplot/" target="_blank"><img src="./images/icons-instagram.png" height="50" width="50" alt="logo instagram" /></a>
+								</li>
+								<li>
+										<a href="https://www.linkedin.com/in/marie-aspro-478001171/" target="_blank"><img src="./images/icons-linkedin.png" height="50" width="50" alt="logo linkedin" /></a>
+								</li>
+						</ul>
+
+						<p class="copyright">&copy; 2019-2020, ALM's Journal, <a href="terms_of_use.html">Terms of use</a></p>
+					</section>
+
+			</div>
+	</body>
+
+  <script>
+
+    function ajouter() {
+
+      // titre
+      var paragraphe = document.getElementById("titre2");
+      var anInputElement = document.getElementById("Titre");
+      console.log(anInputElement.value);
+      paragraphe.textContent = anInputElement.value;
+
+      // auteur
+      paragraphe = document.getElementById("auteur2");
+      anInputElement = document.getElementById("Auteur");
+      console.log(anInputElement.value);
+      paragraphe.textContent = anInputElement.value;
+
+      // date
+      paragraphe = document.getElementById("date2");
+      anInputElement = document.getElementById("Date");
+      console.log(anInputElement.value);
+      paragraphe.textContent = anInputElement.value;
+
+      // article
+      paragraphe = document.getElementById("article");
+      anInputElement = document.getElementById("txt");
+      console.log(anInputElement.value);
+      paragraphe.textContent = anInputElement.value;
+
+      return (true);
+    }
+
+    function showForm(){
+        document.getElementById("2").style.display = "none";
+        document.getElementById("1").style.display = "block";
+    }
+
+    function showArticle(){
+        document.getElementById("1").style.display = "none";
+        document.getElementById("2").style.display = "block";
+    }
+
+    function initial(){
+      document.getElementById('Titre').value = ''
+      document.getElementById('Auteur').value = ''
+      document.getElementById('Date').value = ''
+      document.getElementById('txt').value = ''
+    }
+
+    showForm();
+
+  </script>
+
+</html>
